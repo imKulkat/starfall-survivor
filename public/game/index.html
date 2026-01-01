@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survivor - Auto-Shooter Roguelike</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="game-container"></div>
+    <div id="mode-select" class="menu-overlay">
+        <div class="menu-content">
+            <h1>SURVIVOR</h1>
+            <p>Choose Your Weapon Mode</p>
+            <button id="futuristic-btn" class="mode-btn futuristic">⚡ FUTURISTIC WEAPONS</button>
+            <button id="magic-btn" class="mode-btn magic">✨ MAGIC SPELLS</button>
+        </div>
+    </div>
+    <div id="upgrade-menu" class="menu-overlay hidden">
+        <div class="upgrade-content">
+            <h2>LEVEL UP!</h2>
+            <div id="upgrade-options"></div>
+        </div>
+    </div>
+    <div id="game-over" class="menu-overlay hidden">
+        <div class="menu-content">
+            <h1>GAME OVER</h1>
+            <p id="final-stats"></p>
+            <button id="restart-btn" class="mode-btn">Play Again</button>
+        </div>
+    </div>
+    <script src="phaser.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

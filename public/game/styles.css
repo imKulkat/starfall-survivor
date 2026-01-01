@@ -1,0 +1,188 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0a0a0f;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#game-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+canvas {
+    display: block;
+}
+
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 10, 15, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.menu-overlay.hidden {
+    display: none;
+}
+
+.menu-content {
+    text-align: center;
+    color: #fff;
+}
+
+.menu-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 50px rgba(78, 205, 196, 0.5);
+}
+
+.menu-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #888;
+}
+
+.mode-btn {
+    display: block;
+    width: 300px;
+    margin: 1rem auto;
+    padding: 1.5rem 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.mode-btn.futuristic {
+    background: linear-gradient(135deg, #00d4ff, #0066ff);
+    color: #fff;
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+}
+
+.mode-btn.futuristic:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 50px rgba(0, 212, 255, 0.8);
+}
+
+.mode-btn.magic {
+    background: linear-gradient(135deg, #ff6b6b, #9b59b6);
+    color: #fff;
+    box-shadow: 0 0 30px rgba(155, 89, 182, 0.5);
+}
+
+.mode-btn.magic:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 50px rgba(155, 89, 182, 0.8);
+}
+
+.upgrade-content {
+    text-align: center;
+    color: #fff;
+    max-width: 800px;
+    padding: 2rem;
+}
+
+.upgrade-content h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: #ffd700;
+    text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+}
+
+#upgrade-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.upgrade-card {
+    width: 200px;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.upgrade-card:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.upgrade-card.common {
+    border-color: #888;
+}
+
+.upgrade-card.uncommon {
+    border-color: #4ecdc4;
+    box-shadow: 0 0 20px rgba(78, 205, 196, 0.3);
+}
+
+.upgrade-card.rare {
+    border-color: #9b59b6;
+    box-shadow: 0 0 20px rgba(155, 89, 182, 0.3);
+}
+
+.upgrade-card.legendary {
+    border-color: #ffd700;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+    animation: legendary-glow 2s ease-in-out infinite;
+}
+
+@keyframes legendary-glow {
+    0%, 100% { box-shadow: 0 0 30px rgba(255, 215, 0, 0.5); }
+    50% { box-shadow: 0 0 50px rgba(255, 215, 0, 0.8); }
+}
+
+.upgrade-card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.upgrade-card p {
+    font-size: 0.8rem;
+    color: #aaa;
+}
+
+.upgrade-card .rarity {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 0.5rem;
+}
+
+.upgrade-card.common .rarity { color: #888; }
+.upgrade-card.uncommon .rarity { color: #4ecdc4; }
+.upgrade-card.rare .rarity { color: #9b59b6; }
+.upgrade-card.legendary .rarity { color: #ffd700; }
+
+#final-stats {
+    font-size: 1.2rem;
+    line-height: 2;
+}
